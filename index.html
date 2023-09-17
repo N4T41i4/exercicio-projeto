@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contatos</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h1>Contatos</h1>
+<form>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br>
+    <label for="telefone">Número de Telefone:</label><br>
+    <input type="tel" id="telefone" name="telefone"><br><br>
+    <input type="submit" value="Register">
+</form>
+<ul id="contatos"></ul>
+<script>
+    const form = document.querySelector('form');
+    const contatos = document.querySelector('#contatos');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const nome = document.querySelector('#nome').value;
+      const telefone = document.querySelector('#telefone').value;
+      const contato = document.createElement('li');
+      contato.innerHTML = `${nome} : ${telefone}`;
+      contatos.appendChild(contato);
+    });
+  </script>
+</body>
+</html>
